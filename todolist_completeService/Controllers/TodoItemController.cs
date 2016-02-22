@@ -112,7 +112,7 @@ namespace todolist_completeService.Controllers
             string userTag = "_UserId:" + sid;
 
             // Build a dictionary for the template with the item message text.
-            var notification = new Dictionary<string, string> { { "message", item.Text } };
+            var notification = new Dictionary<string, string> { { "messageParam", item.Text } };
 
             try
             {

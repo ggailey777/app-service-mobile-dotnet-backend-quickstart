@@ -44,11 +44,13 @@ The `[Authorize]` attribute applied to the controllers means that requests must 
 
 ## Configure push notifications
 
-You need to configure push notifications by registering your Windows app with the Windows Store then storing the app's package SID and client secret in the Mobile App backend. These credentials are used by Azure to connect to Windows Notification Service (WNS) to send push notifications. Complete the following sections of the push notifications tutorial to configure push notifications:
+To be able to support push notifications in your backend, you must create a new notification hub and connect it to your Mobile App. To do this complete the steps in the topic [Create a Notification Hub](https://github.com/Azure/azure-content-pr/blob/master/includes/app-service-mobile-create-notification-hub.md).
 
-1. [Create a Notification Hub](https://github.com/Azure/azure-content-pr/blob/master/includes/app-service-mobile-create-notification-hub.md)
-2. [Register your app for push notifications](https://github.com/Azure/azure-content-pr/blob/master/includes/app-service-mobile-register-wns.md)
-3. [Configure the backend to send push notifications](https://github.com/Azure/azure-content-pr/blob/master/includes/app-service-mobile-configure-wns.md)
+Once this is complete, you must complete additional configuration steps for each mobile platform you want to support. If you haven't see it before, a push notification topology looks something like this:
+
+![Push notification topology](https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/en-us/documentation/articles/notification-hubs-diagnosing/20151223054713/architecture.png)
+
+See the client sample readme files for instructions on how configure Notification Hubs to send push notifications using the PNS for a given platform.
 
 For local testing, you must also replace the following settings values in the Web.config file with values from the notification hub used by your Mobile App backend:
 
